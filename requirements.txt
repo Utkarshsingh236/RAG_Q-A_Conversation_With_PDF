@@ -9,3 +9,4 @@ faiss-cpu
 langchain-groq
 langchain-core
 sentence_transformers
+pypdf
