@@ -12,12 +12,14 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 import os
+import torch
+device = "cuda" if torch.cuda.is_available() else "cpu"
 
 from dotenv import load_dotenv
 load_dotenv()
 
 os.environ['HF_TOKEN']=os.getenv("HF_TOKEN")
-embeddings=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+embeddings=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2",model_kwargs={"device": device})
 
 
 ## set up Streamlit 
