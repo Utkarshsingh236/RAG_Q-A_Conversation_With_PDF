@@ -15,6 +15,22 @@ import os
 import torch
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
+from chromadb import Client
+
+client = Client()
+# List tenants to verify existence
+print(client.list_tenants())
+
+# Create tenant if missing
+try:
+    tenant = client.get_tenant("default_tenant")
+except Exception:
+    tenant = client.create_tenant("default_tenant")
+
+# Use tenant for collections and operations
+
+
+
 from dotenv import load_dotenv
 load_dotenv()
 
