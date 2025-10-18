@@ -15,14 +15,14 @@ import os
 import torch
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-import chromadb
-from chromadb.config import Settings
+# import chromadb
+# from chromadb.config import Settings
 
-try:
-    client = chromadb.PersistentClient(tenant="default_tenant", path="./chroma_db", settings=Settings())
-except Exception as e:
-    print("Error connecting to tenant:", e)
-    # Handle tenant creation or prompt user
+# # try:
+# #     client = chromadb.PersistentClient(tenant="default_tenant", path="./chroma_db", settings=Settings())
+# # except Exception as e:
+# #     print("Error connecting to tenant:", e)
+# #     # Handle tenant creation or prompt user
 
 
 
